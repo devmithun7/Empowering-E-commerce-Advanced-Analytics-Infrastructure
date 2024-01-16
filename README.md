@@ -1,44 +1,40 @@
-# Empowering-E-commerce-Advanced-Analytics-Infrastructure
+# IBM-Data-Engineering-Capstone-Project
+
+![image](https://user-images.githubusercontent.com/108534539/218347565-ebebee5e-3de3-427a-8370-cef5e44c3591.png)
 
 
-## Introduction
-This README provides an overview of the data platform architecture for SoftCart, an e-commerce company. The architecture is a hybrid model, utilizing both on-premises and cloud-based databases.
+## Environment
+This document introduces you to the data platform architecture of an ecommerce company named SoftCart.
 
-## Tools and Technologies
+SoftCart uses a hybrid architecture, with some of its databases on premises and some on cloud.
 
-### Databases
-- **OLTP Database**: 
-  - *MySQL* - Manages online transaction processing.
-- **NoSQL Database**: 
-  - *MongoDB* - Stores catalog data for products.
-- **Production Data Warehouse**: 
-  - *IBM DB2 on Cloud* - Serves as the primary operational data repository.
-- **Staging Data Warehouse**: 
-  - *PostgreSQL* - Used for initial data staging and processing.
+Tools and Technologies:
+- OLTP database - MySQL
+- NoSql database - MongoDB
+- Production Data warehouse – DB2 on Cloud
+- Staging - Data warehouse – PostgreSQL
+- Big data platform - Hadoop
+- Big data analytics platform – Spark
+- Business Intelligence Dashboard - IBM Cognos Analytics
+- Data Pipelines - Apache Airflow
 
-### Data Processing and Analytics
-- **Big Data Platform**: 
-  - *Hadoop* - Supports large-scale data storage and processing.
-- **Big Data Analytics**: 
-  - *Apache Spark* - Employed for advanced data analytics on Hadoop.
-- **Business Intelligence Dashboard**: 
-  - *IBM Cognos Analytics* - Creates operational dashboards.
-- **Data Pipelines**: 
-  - *Apache Airflow* - Manages and automates data movement.
+## Process
+- SoftCart's online presence is primarily through its website, which customers access using a variety of devices like laptops, mobiles and tablets.
 
-## Process Overview
+- All the catalog data of the products is stored in the MongoDB NoSQL server.
 
-### Web Platform and Data Storage
-SoftCart's online platform is accessible through devices such as laptops, mobiles, and tablets. MongoDB and MySQL are integral to the webserver's functionality, handling product catalog and transactional data, respectively.
+- All the transactional data like inventory and sales are stored in the MySQL database server.
 
-### Data Staging and Warehousing
-Data extracted from MongoDB and MySQL is processed in PostgreSQL before being transferred to the IBM DB2 cloud-based data warehouse.
+- SoftCart's webserver is driven entirely by these two databases.
 
-### Business Intelligence and Analytics
-Operational dashboards are generated using IBM Cognos Analytics, linked to the cloud data warehouse. The Hadoop cluster and Apache Spark facilitate extensive data analysis.
+- Data is periodically extracted from these two databases and put into the staging data warehouse running on PostgreSQL.
 
-### Data Movement and ETL
-ETL pipelines, orchestrated via Apache Airflow, enable efficient data transfer between the OLTP, NoSQL databases, and data warehouses.
+- Production data warehouse is on the cloud instance of IBM DB2 server.
 
----
+- BI teams connect to the IBM DB2 for operational dashboard creation. IBM Cognos Analytics is used to create dashboards.
 
+- SoftCart uses Hadoop cluster as it big data platform where all the data collected for analytics purposes.
+
+- Spark is used to analyse the data on the Hadoop cluster.
+
+- To move data between OLTP, NoSQL and the dataware house ETL pipelines are used and these run on Apache Airflow.
