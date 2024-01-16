@@ -1,9 +1,8 @@
 # Empowering-E-commerce-Advanced-Analytics-Infrastructure
-Data Platform Architecture of SoftCart
 
 SoftCart, an e-commerce company, employs a hybrid data architecture, leveraging both on-premises and cloud environments to optimize its data management and analytics capabilities.
 
-Tools and Technologies:
+# Tools and Technologies:
 
 OLTP Database: MySQL is used for managing online transaction processing.
 NoSQL Database: MongoDB, catering to the storage of catalog data for products.
@@ -15,7 +14,7 @@ Business Intelligence Dashboard: IBM Cognos Analytics, used for creating insight
 Data Pipelines: Managed and automated by Apache Airflow, facilitating efficient data movement across systems.
 Process Overview:
 
-SoftCart's online platform, accessible via various devices like laptops, mobiles, and tablets, is powered by robust database management systems. Product catalog data is stored in MongoDB, ensuring flexible data handling, while MySQL manages all transactional aspects, such as inventory and sales records. The seamless integration of these databases underpins the functionality of SoftCart's webserver.
+SoftCart's online platform, accessible via various devices like laptops, mobiles, and tablets, is powered by robust database management systems. Product catalog data is stored in MongoDB, ensuring flexible data handling, while MySQL manages all transactional aspects, such as inventory and sales records. The seamless integration of these databases underpins the functionality of SoftCart's web server.
 
 Data from these sources is periodically extracted and transferred to a staging data warehouse running PostgreSQL. This step acts as a precursor to further data refinement and analysis. The refined data is then moved to the production data warehouse hosted on IBM DB2 in the cloud. This cloud-based warehouse forms the backbone of SoftCart's data analytics and operational reporting.
 
